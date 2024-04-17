@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:robocare/core/navigation.dart';
 import 'package:robocare/core/themes/colors.dart';
 import 'package:robocare/core/widgets/default_button.dart';
+import 'package:robocare/features/login/presentation/login_view.dart';
 
 class OpeningView extends StatelessWidget {
   const OpeningView({super.key});
@@ -21,6 +22,9 @@ class OpeningView extends StatelessWidget {
             height: size.height * 0.6,
           ),
           DefaultButton(
+              onPressed: () {
+                navigateTo(context, const LoginView());
+              },
               title: "Sign In",
               backgroundColor: ColorManager.primary,
               textColor: Colors.white,
@@ -31,6 +35,7 @@ class OpeningView extends StatelessWidget {
             height: size.height * 0.03,
           ),
           DefaultButton(
+              onPressed: () {},
               title: "Create account",
               backgroundColor: Colors.white,
               textColor: ColorManager.primary,

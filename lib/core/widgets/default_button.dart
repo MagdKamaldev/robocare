@@ -7,6 +7,7 @@ class DefaultButton extends StatelessWidget {
   final Color borderColor;
   final double width;
   final double height;
+  final Function onPressed;
   const DefaultButton(
       {super.key,
       required this.title,
@@ -14,7 +15,8 @@ class DefaultButton extends StatelessWidget {
       required this.textColor,
       required this.borderColor,
       required this.width,
-      required this.height});
+      required this.height,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,9 @@ class DefaultButton extends StatelessWidget {
       width: width,
       height: height,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            onPressed();
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: backgroundColor,
             padding: EdgeInsets.symmetric(
