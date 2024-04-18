@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:robocare/core/navigation.dart';
 import 'package:robocare/core/themes/colors.dart';
 import 'package:robocare/core/widgets/default_button.dart';
 import 'package:robocare/core/widgets/default_container.dart';
+import 'package:robocare/features/add_medication/presentation/add_medication_view.dart';
 
 class PatiendDetailsview extends StatelessWidget {
   const PatiendDetailsview({super.key});
@@ -131,7 +133,9 @@ class PatiendDetailsview extends StatelessWidget {
                   borderColor: ColorManager.primary,
                   width: size.width * 0.43,
                   height: size.height * 0.07,
-                  onPressed: () {})
+                  onPressed: () {
+                    navigateTo(context, const AddMedicationView());
+                  })
             ],
           )
         ]),
