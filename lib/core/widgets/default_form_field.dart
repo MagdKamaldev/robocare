@@ -40,6 +40,14 @@ Widget defaultFormField({
           color: Colors.black,
         ),
         decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: const BorderSide(color: ColorManager.primary),
+          ),
+          disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: const BorderSide(color: ColorManager.primary),
+          ),
           labelText: label,
           labelStyle: Theme.of(context)
               .textTheme
@@ -58,6 +66,7 @@ Widget defaultFormField({
               : null,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
+            borderSide: const BorderSide(color: ColorManager.primary),
           ),
         ),
       ),

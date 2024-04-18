@@ -11,8 +11,8 @@ class RoboCareApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: ColorManager.primary.toMaterialColor(),
-      ),
+          primarySwatch: ColorManager.primary.toMaterialColor(),
+          iconTheme: const IconThemeData(color: ColorManager.primary)),
       title: 'RoboCare',
       home: const OpeningView(),
     );

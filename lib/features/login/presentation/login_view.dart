@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:robocare/core/navigation.dart';
 import 'package:robocare/core/themes/colors.dart';
 import 'package:robocare/core/widgets/default_app_bar.dart';
 import 'package:robocare/core/widgets/default_button.dart';
 import 'package:robocare/core/widgets/default_form_field.dart';
+import 'package:robocare/features/home/presentation/home_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -103,7 +105,9 @@ class LoginView extends StatelessWidget {
                       borderColor: ColorManager.primary,
                       width: double.infinity,
                       height: size.height * 0.07,
-                      onPressed: () {}),
+                      onPressed: () {
+                        navigateAndFinish(context, const HomeView());
+                      }),
                   SizedBox(
                     height: size.height * 0.2,
                   ),
