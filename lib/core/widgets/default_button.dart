@@ -39,7 +39,9 @@ class DefaultButton extends StatelessWidget {
           ),
           child: Text(
             title,
-            style: TextStyle(color: textColor),
+            style: TextStyle(
+              color: textColor,
+            ),
           )),
     );
   }

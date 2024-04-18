@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:robocare/core/themes/colors.dart';
 import 'package:robocare/core/widgets/default_button.dart';
+import 'package:robocare/core/widgets/default_container.dart';
 
-class ScheduleView extends StatelessWidget {
-  const ScheduleView({super.key});
+class PatiendDetailsview extends StatelessWidget {
+  const PatiendDetailsview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class ScheduleView extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        title: const Text("Robot Task Details",
+        title: const Text("Patient Medical Details",
             style: TextStyle(
               fontSize: 20,
               color: ColorManager.primary,
@@ -58,7 +59,7 @@ class ScheduleView extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: size.height * 0.2,
+            height: size.height * 0.6,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
             child: Card(
               child: Padding(
@@ -89,18 +90,33 @@ class ScheduleView extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           color: Colors.red,
                         )),
+                    SizedBox(
+                      height: size.height * 0.03,
+                    ),
+                    const DefaultContainer(
+                        title: "medicine number one ", date: "11:00 AM"),
+                    SizedBox(
+                      height: size.height * 0.03,
+                    ),
+                    const DefaultContainer(
+                        title: "medicine number two", date: "12:00 AM"),
+                    SizedBox(
+                      height: size.height * 0.03,
+                    ),
+                    const DefaultContainer(
+                        title: "medicine number two", date: "12:00 AM")
                   ],
                 ),
               ),
             ),
           ),
           SizedBox(
-            height: size.height * 0.4,
+            height: size.height * 0.03,
           ),
           Row(
             children: [
               DefaultButton(
-                  title: "Back",
+                  title: "Change",
                   backgroundColor: const Color(0xFFEAF9FF),
                   textColor: ColorManager.primary,
                   borderColor: const Color(0xFFEAF9FF),
@@ -109,7 +125,7 @@ class ScheduleView extends StatelessWidget {
                   onPressed: () {}),
               const Spacer(),
               DefaultButton(
-                  title: "Add Patient",
+                  title: "Add +",
                   backgroundColor: const Color(0xFFEAF9FF),
                   textColor: ColorManager.primary,
                   borderColor: ColorManager.primary,

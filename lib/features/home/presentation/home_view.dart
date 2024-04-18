@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:robocare/core/navigation.dart';
 import 'package:robocare/features/add_patient/presentation/add_patient_screen.dart';
 import 'package:robocare/features/home/presentation/drawer/app_drawer.dart';
+import 'package:robocare/features/patient_details/presentation/patient_details.dart';
 import 'package:robocare/features/robot_schedule/presentation/scredule_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,16 +11,21 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _key = GlobalKey();
+    final GlobalKey<ScaffoldState> key = GlobalKey();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      key: _key,
+      key: key,
       endDrawer: const AppDrawer(),
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.all(7.0),
-          child: Image.asset(
-            "assets/images/user.png",
+          child: GestureDetector(
+            onTap: () {
+              navigateTo(context, const PatiendDetailsview());
+            },
+            child: Image.asset(
+              "assets/images/user.png",
+            ),
           ),
         ),
         centerTitle: true,
@@ -30,7 +36,7 @@ class HomeView extends StatelessWidget {
         actions: [
           GestureDetector(
             onTap: () {
-              _key.currentState!.openEndDrawer();
+              key.currentState!.openEndDrawer();
             },
             child: Padding(
               padding: const EdgeInsets.all(3.0),
