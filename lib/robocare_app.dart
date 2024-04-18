@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:material_color_gen/material_color_gen.dart';
+import 'package:robocare/core/themes/colors.dart';
 import 'package:robocare/features/opening/presentation/opening_view.dart';
 
 class RoboCareApp extends StatelessWidget {
@@ -6,10 +8,13 @@ class RoboCareApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: ColorManager.primary.toMaterialColor(),
+      ),
       title: 'RoboCare',
-      home: OpeningView(),
+      home: const OpeningView(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:robocare/core/navigation.dart';
 import 'package:robocare/core/themes/colors.dart';
 import 'package:robocare/core/widgets/default_button.dart';
 import 'package:robocare/features/login/presentation/login_view.dart';
+import 'package:robocare/features/sign_up/presentation/sign_up_view.dart';
 
 class OpeningView extends StatelessWidget {
   const OpeningView({super.key});
@@ -35,7 +36,9 @@ class OpeningView extends StatelessWidget {
             height: size.height * 0.03,
           ),
           DefaultButton(
-              onPressed: () {},
+              onPressed: () {
+                navigateTo(context, const SignUpView());
+              },
               title: "Create account",
               backgroundColor: Colors.white,
               textColor: ColorManager.primary,

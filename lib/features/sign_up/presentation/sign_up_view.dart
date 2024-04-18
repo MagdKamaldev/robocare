@@ -5,13 +5,14 @@ import 'package:robocare/core/widgets/default_app_bar.dart';
 import 'package:robocare/core/widgets/default_button.dart';
 import 'package:robocare/core/widgets/default_form_field.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    TextEditingController confirmPasswordController = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
@@ -40,7 +41,7 @@ class LoginView extends StatelessWidget {
                     height: size.height * 0.02,
                   ),
                   const Text(
-                    "Log in",
+                    "Create Account",
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w700,
@@ -50,7 +51,7 @@ class LoginView extends StatelessWidget {
                     height: size.height * 0.05,
                   ),
                   defaultFormField(
-                      title: "Email address",
+                      title: "Email",
                       controller: emailController,
                       type: TextInputType.emailAddress,
                       suffix: Icons.done,
@@ -68,7 +69,7 @@ class LoginView extends StatelessWidget {
                     height: size.height * 0.02,
                   ),
                   defaultFormField(
-                      title: "Password",
+                      title: "Create a Password",
                       suffix: Icons.visibility_off_outlined,
                       controller: passwordController,
                       type: TextInputType.visiblePassword,
@@ -83,21 +84,28 @@ class LoginView extends StatelessWidget {
                       label: 'must not be empty',
                       context: context),
                   SizedBox(
-                    height: size.height * 0.01,
+                    height: size.height * 0.02,
                   ),
-                  const Align(
-                    alignment: Alignment.topRight,
-                    child: Text("Forgot password ?",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                        )),
-                  ),
+                  defaultFormField(
+                      title: "Create a Password",
+                      suffix: Icons.visibility_off_outlined,
+                      controller: confirmPasswordController,
+                      type: TextInputType.visiblePassword,
+                      onSubmit: () {},
+                      validate: (String value) {
+                        if (value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
+                      isPassword: true,
+                      label: 'must not be empty',
+                      context: context),
                   SizedBox(
                     height: size.height * 0.05,
                   ),
                   DefaultButton(
-                      title: "Log in",
+                      title: "Sign up",
                       backgroundColor: ColorManager.primary,
                       textColor: Colors.white,
                       borderColor: ColorManager.primary,
@@ -105,17 +113,17 @@ class LoginView extends StatelessWidget {
                       height: size.height * 0.07,
                       onPressed: () {}),
                   SizedBox(
-                    height: size.height * 0.2,
+                    height: size.height * 0.15,
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account ?",
+                      Text("Already have an account ?",
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black,
                           )),
-                      Text("  Sign Up",
+                      Text("  Log in",
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
