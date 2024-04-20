@@ -1,33 +1,20 @@
+// ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 
-class DefaultButton extends StatelessWidget {
-  final String title;
-  final Color backgroundColor;
-  final Color textColor;
-  final Color borderColor;
-  final double width;
-  final double height;
-  final Function onPressed;
-  const DefaultButton(
-      {super.key,
-      required this.title,
-      required this.backgroundColor,
-      required this.textColor,
-      required this.borderColor,
-      required this.width,
-      required this.height,
-      required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return SizedBox(
+Widget defaultButton(
+        {required String title,
+        required Color backgroundColor,
+        required Color textColor,
+        required Color borderColor,
+        required double width,
+        required double height,
+        required Size size,
+        required VoidCallback onPressed}) =>
+    SizedBox(
       width: width,
       height: height,
       child: ElevatedButton(
-          onPressed: () {
-            onPressed();
-          },
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: backgroundColor,
             padding: EdgeInsets.symmetric(
@@ -44,5 +31,3 @@ class DefaultButton extends StatelessWidget {
             ),
           )),
     );
-  }
-}

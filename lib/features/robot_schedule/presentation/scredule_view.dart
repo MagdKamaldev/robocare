@@ -99,16 +99,18 @@ class ScheduleView extends StatelessWidget {
           ),
           Row(
             children: [
-              DefaultButton(
+              defaultButton(
                   title: "Back",
                   backgroundColor: const Color(0xFFEAF9FF),
                   textColor: ColorManager.primary,
                   borderColor: const Color(0xFFEAF9FF),
                   width: size.width * 0.43,
                   height: size.height * 0.07,
-                  onPressed: () {}),
+                  onPressed: () {},
+                  size: size),
               const Spacer(),
-              DefaultButton(
+              defaultButton(
+                  size: size,
                   title: "Add Patient",
                   backgroundColor: const Color(0xFFEAF9FF),
                   textColor: ColorManager.primary,

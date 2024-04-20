@@ -117,7 +117,8 @@ class PatiendDetailsview extends StatelessWidget {
           ),
           Row(
             children: [
-              DefaultButton(
+              defaultButton(
+                  size: size,
                   title: "Change",
                   backgroundColor: const Color(0xFFEAF9FF),
                   textColor: ColorManager.primary,
@@ -126,7 +127,8 @@ class PatiendDetailsview extends StatelessWidget {
                   height: size.height * 0.07,
                   onPressed: () {}),
               const Spacer(),
-              DefaultButton(
+              defaultButton(
+                  size: size,
                   title: "Add +",
                   backgroundColor: const Color(0xFFEAF9FF),
                   textColor: ColorManager.primary,

@@ -133,14 +133,15 @@ class AddPatient extends StatelessWidget {
                   SizedBox(
                     height: size.height * 0.05,
                   ),
-                  DefaultButton(
+                  defaultButton(
                       title: "Add",
                       backgroundColor: ColorManager.primary,
                       textColor: Colors.white,
                       borderColor: ColorManager.primary,
                       width: double.infinity,
                       height: size.height * 0.07,
-                      onPressed: () {})
+                      onPressed: () {},
+                      size: size)
                 ],
               ),
             )

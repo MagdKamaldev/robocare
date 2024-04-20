@@ -22,7 +22,7 @@ class OpeningView extends StatelessWidget {
             'assets/images/welcome.png',
             height: size.height * 0.6,
           ),
-          DefaultButton(
+          defaultButton(
               onPressed: () {
                 navigateTo(context, const LoginView());
               },
@@ -31,13 +31,15 @@ class OpeningView extends StatelessWidget {
               textColor: Colors.white,
               borderColor: ColorManager.primary,
               width: size.width * 0.9,
-              height: size.height * 0.075),
+              height: size.height * 0.075,
+              size: size),
           SizedBox(
             height: size.height * 0.03,
           ),
-          DefaultButton(
+          defaultButton(
+              size: size,
               onPressed: () {
-                navigateTo(context, const SignUpView());
+                navigateTo(context, SignUpView());
               },
               title: "Create account",
               backgroundColor: Colors.white,

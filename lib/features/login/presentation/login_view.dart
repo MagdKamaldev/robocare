@@ -6,6 +6,7 @@ import 'package:robocare/core/widgets/default_app_bar.dart';
 import 'package:robocare/core/widgets/default_button.dart';
 import 'package:robocare/core/widgets/default_form_field.dart';
 import 'package:robocare/features/home/presentation/home_view.dart';
+import 'package:robocare/features/sign_up/presentation/sign_up_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -98,7 +99,7 @@ class LoginView extends StatelessWidget {
                   SizedBox(
                     height: size.height * 0.05,
                   ),
-                  DefaultButton(
+                  defaultButton(
                       title: "Log in",
                       backgroundColor: ColorManager.primary,
                       textColor: Colors.white,
@@ -107,24 +108,30 @@ class LoginView extends StatelessWidget {
                       height: size.height * 0.07,
                       onPressed: () {
                         navigateAndFinish(context, const HomeView());
-                      }),
+                      },
+                      size: size),
                   SizedBox(
                     height: size.height * 0.2,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account ?",
+                      const Text("Don't have an account ?",
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.black,
                           )),
-                      Text("  Sign Up",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: ColorManager.primary,
-                          )),
+                      TextButton(
+                        onPressed: () {
+                          navigateTo(context, SignUpView());
+                        },
+                        child: const Text("  Sign Up",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: ColorManager.primary,
+                            )),
+                      ),
                     ],
                   )
                 ],
