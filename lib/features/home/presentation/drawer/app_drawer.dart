@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:robocare/core/functions/logout.dart';
 import 'package:robocare/core/themes/colors.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -62,7 +63,9 @@ class AppDrawer extends StatelessWidget {
                 MaterialButton(
                     padding: const EdgeInsets.all(15),
                     shape: const CircleBorder(),
-                    onPressed: () {},
+                    onPressed: () {
+                      logout(context);
+                    },
                     color: const Color(0xFFFFF4F4),
                     child: Image.asset("assets/images/logout.png")),
                 SizedBox(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:robocare/core/models/user/user.dart';
 import 'package:robocare/core/navigation.dart';
+import 'package:robocare/core/networks/cache_helper.dart';
 import 'package:robocare/core/networks/dio_helper.dart';
 import 'package:robocare/core/widgets/show_snack_bar.dart';
 import 'package:robocare/features/home/presentation/home_view.dart';
@@ -54,6 +55,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       user = User.fromJson(value.data["user"]);
       token = value.data["jwt"];
       navigateAndFinish(context, const HomeView());
+      CacheHelper.saveData(key: "token", value: token);
     }).catchError((error) {
       showCustomSnackBar(context, error.toString(), Colors.red);
       emit(SignUpError(error.toString()));
