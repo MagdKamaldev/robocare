@@ -23,7 +23,7 @@ class SignUpView extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          navigateTo(context, const LoginView());
+          navigateTo(context, LoginView());
         } else if (state is SignUpError) {
           showCustomSnackBar(context, state.message, Colors.red);
         }
@@ -178,7 +178,7 @@ class SignUpView extends StatelessWidget {
                                 )),
                             TextButton(
                                 onPressed: () {
-                                  navigateTo(context, const LoginView());
+                                  navigateTo(context, LoginView());
                                 },
                                 child: const Text("  Log in",
                                     style: TextStyle(

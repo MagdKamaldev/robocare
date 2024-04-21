@@ -24,7 +24,7 @@ class OpeningView extends StatelessWidget {
           ),
           defaultButton(
               onPressed: () {
-                navigateTo(context, const LoginView());
+                navigateTo(context, LoginView());
               },
               title: "Sign In",
               backgroundColor: ColorManager.primary,
