@@ -56,7 +56,23 @@ class DioHelper {
     String? jwt,
   }) async {
     dio!.options.headers = {
-      //"Authorization": "Bearer $jwt",
+      "Content-Type": "application/json",
+    };
+
+    return dio!.post(
+      url,
+      data: data,
+    );
+  }
+
+  static Future<Response> postAuthorized({
+    required String url,
+    Map<String, dynamic>? query,
+    required dynamic data,
+    required String jwt,
+  }) async {
+    dio!.options.headers = {
+      "Authorization": "Bearer $jwt",
       "Content-Type": "application/json",
     };
 

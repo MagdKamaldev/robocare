@@ -35,7 +35,7 @@ class PatiendDetailsview extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text("Robot Schedule:",
+          const Text("Patient Schedule:",
               style: TextStyle(
                 fontSize: 20,
                 color: ColorManager.primary,
